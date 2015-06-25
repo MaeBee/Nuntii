@@ -1,3 +1,2 @@
-# Wouldn't want to publish mysql and config details, now would we?
+# Wouldn't want to publish config details, now would we?
 /includes/config.php
-/includes/mysql.php
