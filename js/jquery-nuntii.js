@@ -10,16 +10,11 @@ function hidehint(caller) {
 	var siblings;
 	var movement;
 	
-	$.each(treeUp, function(index, value) {
-		if (index == 2) {
-			widget = $(value);
-		}
-	});
-	
+	widget = $(treeUp[2]);
 	siblings = widget.nextAll();
 	movement = widget.height();
 	
-    widget
+	widget
 		.animate({opacity: 0.0}, 600)
 		.queue(function(){
 			$.each(siblings, function(index, value) {
