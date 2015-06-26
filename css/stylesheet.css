@@ -113,9 +113,17 @@ th {
 	border-color: #666;
 }
 .nuntiiclose {
-	float: right;
-	margin-left: 5px;
+	position: absolute;
+	top: 4px;
+	right: 4px;
 	display: none;
+	background-color: #ffffff;
+	background-color: rgba(255,255,255,0.7);
+	border: solid;
+	border-width: 1px;
+	border-color: #000000;
+	border-color: rgba(0,0,0,0.3);
+	border-radius: 4px;
 }
 .nuntii-hint:hover > div > p > .nuntiiclose {
 	display: block;
