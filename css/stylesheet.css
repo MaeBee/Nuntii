@@ -56,7 +56,6 @@ iframe.hidden{
 }
 p {
 	text-align: justify;
-	text-indent: 10px;
 	margin-left: 5px;
 	margin-right: 5px;
     clear: left;
@@ -113,11 +112,13 @@ th {
 	border-style: solid;
 	border-color: #666;
 }
-.sidebarhint {
-	padding: 10px;
-	border-radius: 5px;
-	background-color: #FFFFB4;
-	border-width: 0px;
+.nuntiiclose {
+	float: right;
+	margin-left: 5px;
+	display: none;
+}
+.nuntii-hint:hover > div > p > .nuntiiclose {
+	display: block;
 }
 .footercontent {
 	border-width: 0px;
