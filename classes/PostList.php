@@ -5,11 +5,11 @@
 		
 		public function __construct()
 		{
-			$this->posts[] = new Post();
-			$this->posts[] = new Post();
-			$this->posts[] = new Post();
-			$this->posts[] = new Post();
-			$this->posts[] = new Post();
+		}
+		
+		public function Add($post)
+		{
+			$this->posts[] = $post;
 		}
 		
 		public function ToHTML()
