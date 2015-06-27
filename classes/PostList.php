@@ -18,7 +18,7 @@
 			$i = 0;
 			$count = count($this->posts);
 			foreach ($this->posts as $post) {
-				$html .= $post->ToHTML();
+				$html .= $post->ToHTML(true);
 				$i = $i + 1;
 				if ($i < $count) {
 					$html .= "<hr>\r\n";
