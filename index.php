@@ -8,6 +8,7 @@
 		}
 		return false;
 	}
+<<<<<<< HEAD
 	$hintA = new SidebarHint("Hello");
 	$hintA->SetID("hinta");
 	$hintB = new SidebarHint();
@@ -23,6 +24,15 @@
 	$postList->Add($postA);
 	$postList->Add($postB);
 	$postList->Add(new Post());
+=======
+	
+	$page = new Page();
+	$page->AddToSidebar(new SidebarHint("Hello"));
+	$page->AddToSidebar(new SidebarHint("World"));
+	$page->AddToSidebar(new SidebarBox());
+	$page->AddToSidebar(new SidebarHint("This hint is really long to test how text wider than the element's width gets handled. Bear with me while I FUCK YOUR SHIT UP!"));
+	$page->AddToSidebar(new SidebarBox());
+>>>>>>> origin/unstable
 ?>
 <html>
 	<head>
@@ -40,6 +50,7 @@
 			<div id="header">
 			</div>
 			<div id="content">
+<<<<<<< HEAD
 				<div id="maincontent">
 					<?php echo($postList->ToHTML()); ?>
 					<p style="text-align: right;"><a href="#wrapper">Back to top</a></p>
@@ -49,6 +60,9 @@
 					echo($hintB->ToHTML());
 					echo($hintC->ToHTML()); ?>
 				</div>
+=======
+				<?php echo($page->ToHTML()); ?>
+>>>>>>> origin/unstable
 			</div>
 			<div id="footer">
 			</div>
