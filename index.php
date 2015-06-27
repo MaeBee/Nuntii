@@ -10,8 +10,10 @@
 	}
 	
 	$page = new Page();
-	$page->AddToSidebar(new SidebarHint("Hello"));
-	$page->AddToSidebar(new SidebarHint("World"));
+	$page->AddToSidebar(new SidebarHint("I'm giving you a night call to tell you how I feel"));
+	$page->AddToSidebar(new SidebarHint("I want to drive you through the night, down the hills"));
+	$page->AddToSidebar(new SidebarHint("I'm gonna tell you something you don't want to hear"));
+	$page->AddToSidebar(new SidebarHint("I'm gonna show you where it's dark, but have no fear!"));
 	$page->AddToSidebar(new SidebarBox());
 	$page->AddToSidebar(new SidebarHint("This hint is really long to test how text wider than the element's width gets handled. Bear with me while I FUCK YOUR SHIT UP!"));
 	$page->AddToSidebar(new SidebarBox());
