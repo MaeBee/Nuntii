@@ -1,8 +1,6 @@
 <?php
 	class SidebarBox extends SidebarElement
 	{
-<<<<<<< HEAD
-=======
 		public function ToHTML()
 		{
 			$html = "";
@@ -11,6 +9,5 @@
 			$html .= "</div>\r\n";
 			return $html;
 		}
->>>>>>> origin/unstable
 	}
 ?>

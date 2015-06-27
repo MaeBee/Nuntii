@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-	class Page extends Post
-	{
-=======
 	class Page
 	{
 		private $maincontent;
@@ -76,6 +72,5 @@
 			
 			return $html;
 		}
->>>>>>> origin/unstable
 	}
 ?>

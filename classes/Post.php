@@ -3,10 +3,7 @@
 	{
 		private $author;
 		private $mySQL;
-<<<<<<< HEAD
-=======
 		private $postID = 0;
->>>>>>> origin/unstable
 		private $postDate = "Tuesday, 11th of November 2014, 20:18 MET";
 		private $postBody = "<p>Hello World</p>";
 		
@@ -33,10 +30,6 @@
 			return $author->GetName();
 		}
 		
-<<<<<<< HEAD
-		public function ToHTML()
-		{
-=======
 		public function ToHTML($list = false)
 		{
 			$postBody = $this->postBody;
@@ -53,7 +46,6 @@
 					$readlink .= "<p><a href=\"index.php?m=post&id=" . $this->postID . "\">View article</a></p>\r\n";
 				}
 			}
->>>>>>> origin/unstable
 			$html = "";
 			// Open div
 			$html .= "<div class=\"post\">\r\n";
@@ -62,14 +54,10 @@
 				$html .= "<p><a href=\"index.php?m=author&id=" . $this->GetAuthorID() . "\">" . $this->GetAuthorName() . "</a> on " . $this->postDate . "</p>\r\n";
 				
 				// Post Body
-<<<<<<< HEAD
-				$html .= $this->postBody . "\r\n";
-=======
 				$html .= $postBody . "\r\n";
 				if ($list) {
 					$html .= $readlink;
 				};
->>>>>>> origin/unstable
 				
 				// Post End
 				$html .= "<p>" . $this->GetTagsHTML() . "</p>\r\n";

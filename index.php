@@ -8,23 +8,6 @@
 		}
 		return false;
 	}
-<<<<<<< HEAD
-	$hintA = new SidebarHint("Hello");
-	$hintA->SetID("hinta");
-	$hintB = new SidebarHint();
-	$hintB->SetText("World");
-	$hintB->SetID("hintb");
-	$hintC = new SidebarHint("This hint is really long to test how text wider than the element's width gets handled. Bear with me while I FUCK YOUR SHIT UP!");
-	$hintC->SetID("hintc");
-	
-	$postA = new Post();
-	$postB = new Post();
-	
-	$postList = new PostList();
-	$postList->Add($postA);
-	$postList->Add($postB);
-	$postList->Add(new Post());
-=======
 	
 	$page = new Page();
 	$page->AddToSidebar(new SidebarHint("I'm giving you a night call to tell you how I feel"));
@@ -34,7 +17,6 @@
 	$page->AddToSidebar(new SidebarBox());
 	$page->AddToSidebar(new SidebarHint("This hint is really long to test how text wider than the element's width gets handled. Bear with me while I FUCK YOUR SHIT UP!"));
 	$page->AddToSidebar(new SidebarBox());
->>>>>>> origin/unstable
 ?>
 <html>
 	<head>
@@ -52,19 +34,7 @@
 			<div id="header">
 			</div>
 			<div id="content">
-<<<<<<< HEAD
-				<div id="maincontent">
-					<?php echo($postList->ToHTML()); ?>
-					<p style="text-align: right;"><a href="#wrapper">Back to top</a></p>
-				</div>
-				<div id="sidebar">
-					<?php echo($hintA->ToHTML());
-					echo($hintB->ToHTML());
-					echo($hintC->ToHTML()); ?>
-				</div>
-=======
 				<?php echo($page->ToHTML()); ?>
->>>>>>> origin/unstable
 			</div>
 			<div id="footer">
 			</div>
