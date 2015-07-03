@@ -17,6 +17,8 @@
 	$page->AddToSidebar(new SidebarBox());
 	$page->AddToSidebar(new SidebarHint("This hint is really long to test how text wider than the element's width gets handled. Bear with me while I FUCK YOUR SHIT UP!"));
 	$page->AddToSidebar(new SidebarBox());
+	
+	$sitename = "Nuntii";
 ?>
 <html>
 	<head>
@@ -32,11 +34,13 @@
 	</body>
 		<div id="wrapper">
 			<div id="header">
+				<?php require_once("includes/header.php"); ?>
 			</div>
 			<div id="content">
 				<?php echo($page->ToHTML()); ?>
 			</div>
 			<div id="footer">
+				<?php require_once("includes/footer.php"); ?>
 			</div>
 		</div>
 	</body>

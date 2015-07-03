@@ -22,6 +22,13 @@
 			$this->SetText($a1);
 		}
 		
+		private function __construct2($a1, $a2)
+		{
+			// Class got constructed with two parameters. Expected is a string containing the ID and a string containing the text for the hint
+			$this->SetID($a1);
+			$this->SetText($a2);
+		}
+		
 		public function SetText($newText)
 		{
 			$this->text = $newText;

@@ -9,7 +9,7 @@
 		
 		public function __construct()
 		{
-			$this->author = new Author();
+			$this->author = new User(1);
 			$this->mySQL = new MySQL();
 		}
 		
@@ -39,19 +39,19 @@
 				$postBody = $explosion[0];
 				if(count($explosion) > 1)
 				{
-					$readlink .= "<p><a href=\"index.php?m=post&id=" . $this->postID . "\">Read more...</a></p>\r\n";
+					$readlink .= "<p><a href=\"index.php?m=post&id=" . $this->postID . "\">" . _("Read more...") . "</a></p>\r\n";
 				}
 				else
 				{
-					$readlink .= "<p><a href=\"index.php?m=post&id=" . $this->postID . "\">View article</a></p>\r\n";
+					$readlink .= "<p><a href=\"index.php?m=post&id=" . $this->postID . "\">" . _("View article") . "</a></p>\r\n";
 				}
 			}
 			$html = "";
 			// Open div
 			$html .= "<div class=\"post\">\r\n";
 				// Post Header
-				$html .= "<h1>This is a post</h1>\r\n";
-				$html .= "<p><a href=\"index.php?m=author&id=" . $this->GetAuthorID() . "\">" . $this->GetAuthorName() . "</a> on " . $this->postDate . "</p>\r\n";
+				$html .= "<a href=\"index.php?m=post&id=" . $this->postID . "\"><h1>This is a post</h1></a>\r\n";
+				$html .= "<p><a href=\"index.php?m=user&id=" . $this->GetAuthorID() . "\">" . $this->GetAuthorName() . "</a> on " . $this->postDate . "</p>\r\n";
 				
 				// Post Body
 				$html .= $postBody . "\r\n";

@@ -2,6 +2,13 @@ $(document).ready(function() {
 	$('.nuntiiclose').each(function (index) {
 		$(this).click(function() { hidehint($(this)); });
 	});
+	$(window).scroll(function() {
+		if ($(window).scrollTop() > 208) {
+			$('#wrapper').addClass("fix-nav");
+		} else {
+			$('#wrapper').removeClass("fix-nav");
+		}
+	});
 });
 
 function hidehint(caller) {
