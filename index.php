@@ -1,4 +1,5 @@
 <?php
+	// Set up autoload
 	function __autoload($classname)
 	{
 		$filename = "./classes/". $classname .".php";
@@ -7,6 +8,27 @@
 			return true;
 		}
 		return false;
+	}
+	
+	$mode = "";
+	$id = -1;
+	
+	// Get parameters
+	if (isset ($_GET["m"]))
+	{
+		$mode = $_GET["m"];
+	}
+	if (isset ($_GET["id"]))
+	{
+		$id = $_GET["id"];
+	}
+	
+	// Check if installation has even been done yet, otherwise set to installation mode
+	if(file_get_contents("includes/config.php") == "")
+	{
+		$mode = "install";
+	} else {
+		
 	}
 	
 	$page = new Page();
@@ -22,7 +44,7 @@
 ?>
 <html>
 	<head>
-		<title>Nuntii</title>
+		<title><?php echo($sitename); ?></title>
 		
 		<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
 		<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
