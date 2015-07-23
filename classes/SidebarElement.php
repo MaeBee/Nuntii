@@ -1,5 +1,7 @@
 <?php
-	abstract class SidebarElement
-	{
-	}
+
+abstract class SidebarElement {
+    
+}
+
 ?>

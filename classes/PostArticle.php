@@ -1,5 +1,7 @@
 <?php
-	class PostArticle extends Post
-	{
-	}
+
+class PostArticle extends Post {
+    
+}
+
 ?>

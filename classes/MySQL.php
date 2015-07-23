@@ -1,8 +1,11 @@
 <?php
-	class MySQL
-	{
-		public function __construct()
-		{
-		}
-	}
+class MySQL {
+
+    public function __construct() {
+        
+    }
+    
+    
+    
+}
 ?>

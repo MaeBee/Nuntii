@@ -2,251 +2,251 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
-	font-family: "Open Sans", sans-serif;
-	font-size: 11px;
-	font-style: normal;
-	background: url("../img/background.png") fixed;
-	text-align: left;
+    font-family: "Open Sans", sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    background: url("../img/background.png") fixed;
+    text-align: left;
 }
 a {
-	color: #000;
-	-webkit-transition: color 0.3s;
+    color: #000;
+    -webkit-transition: color 0.3s;
 }
 a:hover {
-	color: #F00;
-	-webkit-transition: color 0.3s;
+    color: #F00;
+    -webkit-transition: color 0.3s;
 }
 div {
-	position: relative;
+    position: relative;
 }
 hr {
-	height: 2px;
-	border: none;
-	background-color: #000;
+    height: 2px;
+    border: none;
+    background-color: #000;
 }
 h1 {
-	font-weight: bold;
-	margin: 5px;
-	font-size: 18px;
+    font-weight: bold;
+    margin: 5px;
+    font-size: 18px;
 }
 h1.listheader {
-	font-weight: bold;
-	padding: 5px;
-	margin: 0px;
-	background-color: #000;
-	border-bottom: solid;
-	border-bottom-color: #F00;
-	border-bottom-width: 3px;
-	color: #FFF;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0px;
+    background-color: #000;
+    border-bottom: solid;
+    border-bottom-color: #F00;
+    border-bottom-width: 3px;
+    color: #FFF;
 }
 h1 > a {
-	text-decoration: none;
+    text-decoration: none;
 }
 h2 {
-	font-weight: bold;
-	margin: 5px;
+    font-weight: bold;
+    margin: 5px;
 }
 h2 > a {
-	text-decoration: none;
+    text-decoration: none;
 }
 h3 {
-	line-height: 32px;
-	margin-left: 5px;
-	margin-top: 0px;
+    line-height: 32px;
+    margin-left: 5px;
+    margin-top: 0px;
 }
 iframe.hidden{
-	display: none;
-	width: 0px;
-	height: 0px;
+    display: none;
+    width: 0px;
+    height: 0px;
 }
 p {
-	text-align: justify;
-	margin-left: 5px;
-	margin-right: 5px;
+    text-align: justify;
+    margin-left: 5px;
+    margin-right: 5px;
     clear: left;
 }
 table {
-	margin: 2px;
+    margin: 2px;
 }
 td, th {
-	vertical-align: top;
-	text-indent: 3px;
-	padding: 2px;
+    vertical-align: top;
+    text-indent: 3px;
+    padding: 2px;
 }
 th {
-	font-size: 18px;
+    font-size: 18px;
 }
 .floatright {
-	float: right;
-	margin-left: 5px;
+    float: right;
+    margin-left: 5px;
 }
 .floatleft {
-	float: left;
-	margin-right: 5px;
-	margin-bottom: 5px;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 .sidebarbox {
-	margin: 5px;
-	width: 246px;
-	border-collapse:collapse;
-	border-width: 2px;
-	border-style: solid;
-	border-color: #666;
+    margin: 5px;
+    width: 246px;
+    border-collapse:collapse;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #666;
 }
 .sidebarheading {
-	background-color: #000;
-	border-top-width: 2px;
-	border-right-width: 2px;
-	border-bottom-width: 3px;
-	border-left-width: 2px;
-	border-style: solid;
-	border-top-color: #666;
-	border-right-color: #666;
-	border-bottom-color: #F00;
-	border-left-color: #666;
-	color: #FFF;
-	font-size: 16px;
-	padding-bottom: 5px;
-	padding-top: 5px;
+    background-color: #000;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 3px;
+    border-left-width: 2px;
+    border-style: solid;
+    border-top-color: #666;
+    border-right-color: #666;
+    border-bottom-color: #F00;
+    border-left-color: #666;
+    color: #FFF;
+    font-size: 16px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 .sidebarcontent {
-	border-top-width: 1px;
-	border-right-width: 2px;
-	border-bottom-width: 1px;
-	border-left-width: 2px;
-	border-style: solid;
-	border-color: #666;
+    border-top-width: 1px;
+    border-right-width: 2px;
+    border-bottom-width: 1px;
+    border-left-width: 2px;
+    border-style: solid;
+    border-color: #666;
 }
 .nuntii-hint {
-	position: relative;
+    position: relative;
 }
 .nuntiiclose {
-	position: absolute;
-	top: 4px;
-	right: 4px;
-	opacity: 0;
-	background-color: #ffffff;
-	background-color: rgba(255,255,255,0.7);
-	border: solid;
-	border-width: 1px;
-	border-color: #000000;
-	border-color: rgba(0,0,0,0.3);
-	border-radius: 4px;
-	-webkit-transition: opacity 0.6s;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    opacity: 0;
+    background-color: #ffffff;
+    background-color: rgba(255,255,255,0.7);
+    border: solid;
+    border-width: 1px;
+    border-color: #000000;
+    border-color: rgba(0,0,0,0.3);
+    border-radius: 4px;
+    -webkit-transition: opacity 0.6s;
 }
 .nuntii-hint:hover > div > p > .nuntiiclose {
-	opacity: 0.7;
-	-webkit-transition: opacity 0.6s;
+    opacity: 0.7;
+    -webkit-transition: opacity 0.6s;
 }
 .post > a {
-	text-decoration: none;
+    text-decoration: none;
 }
 .footercontent {
-	border-width: 0px;
-	border-left-width: 2px;
-	border-style: solid;
-	border-color: #666;
-	text-align: left;
-	vertical-align: top;
-	width: 50%;
+    border-width: 0px;
+    border-left-width: 2px;
+    border-style: solid;
+    border-color: #666;
+    text-align: left;
+    vertical-align: top;
+    width: 50%;
 }
 .footercontent > a {
-	text-decoration: none;
-	margin-left: 5px;
+    text-decoration: none;
+    margin-left: 5px;
 }
 .footercontent > ul {
-	list-style-type: none;
-	padding: 0px;
-	padding-left: 4px;
-	margin: 0px;
+    list-style-type: none;
+    padding: 0px;
+    padding-left: 4px;
+    margin: 0px;
 }
 .fix-nav #header nav {
-	position: fixed;
-	top: 0px;
-	width: 1024px;
-	z-index: 1;
+    position: fixed;
+    top: 0px;
+    width: 1024px;
+    z-index: 1;
 }
 .fix-nav #content {
-	margin-top: 40px;
+    margin-top: 40px;
 }
 .fix-nav #footer {
-	margin-top: 40px;
+    margin-top: 40px;
 }
 #wrapper {
-	width: 1024px;
-	margin-top: 0px;
-	margin-right: auto;
-	margin-left: auto;
-	background-color: #FFF;
+    width: 1024px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #FFF;
 }
 #header {
-	text-align: center;
+    text-align: center;
 }
 #headerbanner {
-	width: 1024px;
-	height: 200px;
-	background-color: #FFFF00;
+    width: 1024px;
+    height: 200px;
+    background-color: #FFFF00;
 }
 nav {
-	background-color: #000;
-	border-bottom: solid;
-	border-bottom-color: #F00;
-	border-bottom-width: 3px;
-	color: #FFF;
-	font-weight: bold;
-	height: 36px;
-	text-align: left;
-	position: relative;
-	width: 100%;
+    background-color: #000;
+    border-bottom: solid;
+    border-bottom-color: #F00;
+    border-bottom-width: 3px;
+    color: #FFF;
+    font-weight: bold;
+    height: 36px;
+    text-align: left;
+    position: relative;
+    width: 100%;
 }
 nav > a {
-	color: #FFF;
-	text-decoration: none;
+    color: #FFF;
+    text-decoration: none;
 }
 nav > a > span {
-	color: #FFF;
-	padding: 10px;
-	padding-bottom: 12px;
-	position: relative;
-	top: 10px;
-	-webkit-transition: background-color 0.3s;
+    color: #FFF;
+    padding: 10px;
+    padding-bottom: 12px;
+    position: relative;
+    top: 10px;
+    -webkit-transition: background-color 0.3s;
 }
 nav > a.menuitemright {
-	float: right;
+    float: right;
 }
 nav > a.loginform  > span {
-	padding: 0px;
-	top: 8px;
+    padding: 0px;
+    top: 8px;
 }
 nav > a:hover > span {
-	background-color: #666;
-	-webkit-transition: background-color 0.3s;
-	padding-bottom: 14px;
+    background-color: #666;
+    -webkit-transition: background-color 0.3s;
+    padding-bottom: 14px;
 }
 .menuactive > span {
-	background-color: #F00;
+    background-color: #F00;
 }
 #maincontent {
-	float: left;
-	width: 738px;
-	padding: 10px;
-	padding-bottom: 0px;
+    float: left;
+    width: 738px;
+    padding: 10px;
+    padding-bottom: 0px;
 }
 #sidebar {
-	float: right;
-	width: 256px;
-	padding: 5px;
+    float: right;
+    width: 256px;
+    padding: 5px;
 }
 #footer {
-	clear: both;
-	font-size: 11px;
-	padding: 0px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	text-align: center;
+    clear: both;
+    font-size: 11px;
+    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
 }
 #footertable {
-	font-size: 11px;
-	width: 100%;
-	border-style: none;
+    font-size: 11px;
+    width: 100%;
+    border-style: none;
 }
