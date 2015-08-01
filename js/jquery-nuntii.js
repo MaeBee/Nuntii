@@ -20,7 +20,7 @@ function hidehint(caller) {
 	widget = $(treeUp[2]);
 	siblings = widget.nextAll();
 	movement = widget.height();
-	
+        
 	widget
 		.animate({opacity: 0.0}, 600)
 		.queue(function(){

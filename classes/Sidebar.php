@@ -14,9 +14,9 @@
 		
 		public function SortHintsUp()
 		{
-			// Pulls all hints from the element list and puts them to the top of the list.
-			$hints;
-			$others;
+                    // Pulls all hints from the element list and puts them to the top of the list.
+			$hints = [];
+			$others = [];
 			foreach ($this->elements as $i => $element) {
 				if (get_class($element) == "SidebarHint") {
 					$hints[] = $element;
@@ -31,12 +31,15 @@
 		
 		public function ToHTML()
 		{
+                    if (count($this->elements) > 0)
+                    {
 			$this->SortHintsUp();
 			$html = "";
 			foreach ($this->elements as $element) {
 				$html .= $element->ToHTML() . "\r\n";
 			}
 			return $html;
+                    }
 		}
 	}
 ?>

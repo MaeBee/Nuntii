@@ -185,7 +185,8 @@ th {
 #headerbanner {
 	width: 1024px;
 	height: 200px;
-	background-color: #FFFF00;
+	background: url("../img/header.jpg");
+	//background-color: #FFFF00;
 }
 nav {
 	background-color: #000;

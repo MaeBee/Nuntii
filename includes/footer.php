@@ -16,7 +16,7 @@
 				<li><a href="?m=user&id=3">Your mum</a></li>
 			</ul>
 		</td>
-		</tr>
+	</tr>
 </table>
 <hr>
 Powered by Nuntii<br>

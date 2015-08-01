@@ -5,6 +5,13 @@
 		
 		public function __construct()
 		{
+                    $mysql = new MySQL();
+                    $res = $mysql->GetPostsByType("article");
+                    
+                    while ($row = $res->fetch_assoc())
+                    {
+                        $this->Add(new Post($row));
+                    }
 		}
 		
 		public function Add($post)
@@ -27,4 +34,3 @@
 			return $html;
 		}
 	}
-?>

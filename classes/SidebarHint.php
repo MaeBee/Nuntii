@@ -1,8 +1,9 @@
 <?php
-	class SidebarHint extends SidebarElement
+	class SidebarHint
 	{
 		private $text = "";
 		private $id = "";
+                private $alert = false;
 		
 		public function __construct()
 		{
@@ -24,9 +25,9 @@
 		
 		private function __construct2($a1, $a2)
 		{
-			// Class got constructed with two parameters. Expected is a string containing the ID and a string containing the text for the hint
-			$this->SetID($a1);
-			$this->SetText($a2);
+			// Class got constructed with two parameters. Expected is a string containing the textfor the hint and a bool indicating an alert box instead of a hint box
+			$this->SetText($a1);
+			$this->SetAlert($a2);
 		}
 		
 		public function SetText($newText)
@@ -50,12 +51,29 @@
 		{
 			return $this->id;
 		}
-		
-		public function ToHTML()
+                
+		public function SetAlert($alert)
+		{
+			$this->alert = $alert;
+			return true;
+		}
+                
+                public function GetAlert()
+                {
+                    return $this->alert;
+                }
+
+
+                public function ToHTML()
 		{
 			$html = "";
 			$html .= "<div class=\"ui-widget nuntii-hint\">\r\n";
-				$html .= "<div class=\"ui-state-highlight ui-corner-all\">\r\n<p>\r\n";
+                                if ($this->GetAlert())
+                                {
+                                    $html .= "<div class=\"ui-state-error ui-corner-all\">\r\n<p>\r\n";
+                                } else {
+                                    $html .= "<div class=\"ui-state-highlight ui-corner-all\">\r\n<p>\r\n";
+                                }
 					$html .= "<span class=\"nuntiiclose ui-icon ui-icon-close\"></span>\r\n";
 					$html .= $this->GetText() . "\r\n";
 				$html .= "</p>\r\n</div>\r\n<br/>\r\n";
@@ -63,4 +81,3 @@
 			return $html;
 		}
 	}
-?>

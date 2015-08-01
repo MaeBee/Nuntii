@@ -2,4 +2,3 @@
 	class PostArticle extends Post
 	{
 	}
-?>

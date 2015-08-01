@@ -1,3 +1,4 @@
 # Wouldn't want to publish config details, now would we? Also irrelevant on other environments.
 # config.php will be generated in the installer script, anyway
 /includes/config.php
+/nbproject/private/

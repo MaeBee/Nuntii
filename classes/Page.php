@@ -5,6 +5,7 @@
 		private $sidebar;
 		private $mode;
 		private $id;
+                private $filter;
 		
 		public function __construct()
 		{
@@ -12,6 +13,7 @@
 			$this->sidebar = new Sidebar();
 			$this->mode = "list";
 			$this->id = 0;
+                        $this->filter = null;
 			
 			$a = func_get_args();
 			$i = func_num_args();
@@ -25,27 +27,24 @@
 			
 			// With the mode set, we can proceed to evaluate and set up the page's main content.
 			switch ($this->mode) {
-				case "list":
-					$maincontent = new PostList();
-					$maincontent->Add(new Post());
-					$maincontent->Add(new Post());
-					$maincontent->Add(new Post());
-					$maincontent->Add(new Post());
-					$maincontent->Add(new Post());
-					$maincontent->Add(new Post());
-					$maincontent->Add(new Post());
-					$maincontent->Add(new Post());
-					$maincontent->Add(new Post());
-					$maincontent->Add(new Post());
+                                case ("list" || "login" || "logout"):
+                                        $maincontent = null;
+                                        if (!isset($this->filter))
+                                        {
+                                                $maincontent = new PostList();
+                                        } else {
+                                                $maincontent = new PostList();
+                                        }
 					$this->maincontent = $maincontent;
 					break;
 				case "user":
-					$maincontent = new UserPage();
-					$maincontent->Add(new User($this->id));
-					break;
-				case "user":
 					$maincontent = new UserPage($this->id);
+                                        $this->maincontent = $maincontent;
 					break;
+                                case "register":
+                                        $maincontent = new HTMLPage("./includes/register.php", $this->id);
+                                        $this->maincontent = $maincontent;
+                                        break;
 			}			
 		}
 		
@@ -57,11 +56,19 @@
 		
 		private function __construct2($a1, $a2)
 		{
-			// Class got constructed with two parameter. Expected is a string containing the page mode (e.g. "post", "static", or "user") and an int containing the ID.
+			// Class got constructed with two parameters. Expected is a string containing the page mode (e.g. "post", "static", or "user") and an int containing the ID.
 			$this->mode = $a1;
 			$this->id = $a2;
 		}
 		
+		private function __construct3($a1, $a2, $a3)
+		{
+			// Class got constructed with three parameters. Expected is a string containing the page mode (very likely to be "list"), an int containing the ID, and a string denominating the filter (e.g. "tag", "author", or similar).
+			$this->mode = $a1;
+			$this->id = $a2;
+			$this->filter = $a3;
+		}
+                
 		public function AddToSidebar($element)
 		{
 			$sidebar = $this->sidebar;
@@ -95,5 +102,11 @@
 			
 			return $html;
 		}
-	}
-?>
+
+                public function setContentID($id)
+                {
+                    $this->maincontent->setID($id);
+                    return true;
+                }
+
+}

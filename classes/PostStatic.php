@@ -2,4 +2,3 @@
 	class PostStatic extends Post
 	{
 	}
-?>
