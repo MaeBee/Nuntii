@@ -14,7 +14,6 @@ $(document).ready(function () {
 });
 
 function hidehint(caller) {
-<<<<<<< HEAD
 	var treeUp = caller.parents();
 	var widget;
 	var siblings;
@@ -32,23 +31,4 @@ function hidehint(caller) {
 			});
 			$(this).dequeue();
 		});
-=======
-    var treeUp = caller.parents();
-    var widget;
-    var siblings;
-    var movement;
-
-    widget = $(treeUp[2]);
-    siblings = widget.nextAll();
-    movement = widget.height();
-
-    widget
-            .animate({opacity: 0.0}, 600)
-            .queue(function () {
-                $.each(siblings, function (index, value) {
-                    $(value).animate({bottom: "+=" + movement}, 600)
-                });
-                $(this).dequeue();
-            });
->>>>>>> origin/unstable
 }

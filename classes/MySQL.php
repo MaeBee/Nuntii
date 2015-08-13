@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 	class MySQL
 	{
 		public function __construct()
@@ -107,15 +106,3 @@
                     return "OK";
                 }
 	}
-=======
-class MySQL {
-
-    public function __construct() {
-        
-    }
-    
-    
-    
-}
-?>
->>>>>>> origin/unstable

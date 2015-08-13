@@ -183,16 +183,10 @@ th {
     text-align: center;
 }
 #headerbanner {
-<<<<<<< HEAD
 	width: 1024px;
 	height: 200px;
 	background: url("../img/header.jpg");
-	//background-color: #FFFF00;
-=======
-    width: 1024px;
-    height: 200px;
-    background-color: #FFFF00;
->>>>>>> origin/unstable
+	background-color: #ff0088;
 }
 nav {
     background-color: #000;
