@@ -1,6 +1,6 @@
 <?php
     $stime = microtime(true);
-        require_once("includes/autoload.php");
+    require_once("includes/autoload.php");
 	session_start();
 	
         // Get parameters

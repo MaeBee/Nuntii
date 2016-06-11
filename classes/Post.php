@@ -4,6 +4,7 @@
 		private $postID;
                 private $postType;
 		private $postAuthor;
+                private $postCategory;
                 private $postTitle;
 		private $postBody;
 		private $postDate;
@@ -25,14 +26,15 @@
 		
                 private function __construct1($a1)
                 {
-                        $this->postID = $a1["id"];
-                        $this->postType = $a1["type"];
-                        $this->postAuthor = new User($a1["author"]);
-                        $this->postTitle = $a1["title"];
-                        $this->postBody = $a1["text"];
-                        $this->postDate = date("l, jS \of F Y, G:i:s T",$a1["time"]);
-                        $this->postTags = $a1["tags"];
-                        $this->postSidebar = $a1["sidebar"];
+                    $this->postID = $a1[0];
+                    $this->postType = $a1[1];
+                    $this->postAuthor = new User($a1[2]);
+                    $this->postCategory = $a1[3];
+                    $this->postTitle = $a1[4];
+                    $this->postBody = $a1[5];
+                    $this->postDate = date("l, jS \of F Y, G:i:s T",$a1[6]);
+                    $this->postTags = $a1[7];
+                    $this->postSidebar = $a1[8];
                 }
                 
 		public function GetTagsHTML()

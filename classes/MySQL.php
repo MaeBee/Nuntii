@@ -3,12 +3,39 @@
 	{
 		public function __construct()
 		{
-                    
 		}
                 
                 public function GetPostsByType($type) {
+                    $res = array();
                     $tableprefix = "nuntii_";
-                    return $this->RunQuery("SELECT * FROM " . $tableprefix . "posts WHERE type=? ORDER BY id DESC", "s", [$type]);
+                    // TODO: Get DB information from config
+                    include("data.php");
+                    // Establish connection
+                    $mysqli = new mysqli($host, $user, $password, $database);
+                    if ($mysqli->connect_errno) {
+                        echo "Failed to connect to MySQL.";
+                    }
+                    // Prepare query
+                    if (!($stmt = $mysqli->prepare("SELECT * FROM " . $tableprefix . "posts WHERE type=? ORDER BY id DESC")))
+                    {
+                        echo "Error Preparing statement.";
+                    }
+                    // Bind parameters
+                    if (!($stmt->bind_param("s", $type)))
+                    {
+                        echo "Error binding paramets.";
+                    }
+                    // Execute the statement
+                    if (!$stmt->execute()) {
+                        echo "Execute failed.";
+                    }
+                    // Take the result, destruct the statement, and pass on the result
+                    $stmt->bind_result($postid, $posttype, $postauthor, $postcategory, $posttitle, $posttext, $posttime, $posttags, $postsidebar);
+                    while ($stmt->fetch()) {
+                        $res[] = array($postid, $posttype, $postauthor, $postcategory, $posttitle, $posttext, $posttime, $posttags, $postsidebar);
+                    }
+                    $stmt->close();
+                    return $res;
                 }
                 
                 public function CheckUserName($name) {
@@ -32,47 +59,65 @@
                 public function GetUserByName($name)
                 {
                     $tableprefix = "nuntii_";
-                    $res = $this->RunQuery("SELECT * FROM " . $tableprefix . "users WHERE name=?", "s", [$name]);
+                    // TODO: Get DB information from config
+                    include("data.php");
+                    // Establish connection
+                    $mysqli = new mysqli($host, $user, $password, $database);
+                    if ($mysqli->connect_errno) {
+                        echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+                    }
+                    // Prepare query
+                    if (!($stmt = $mysqli->prepare("SELECT * FROM " . $tableprefix . "users WHERE name=?")))
+                    {
+                        echo "Error Preparing statement.";
+                    }
+                    // Bind parameters
+                    if (!($stmt->bind_param("s", $name)))
+                    {
+                        echo "Error binding paramets.";
+                    }
+                    // Execute the statement
+                    if (!$stmt->execute()) {
+                        echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error . "<br/>";
+                    }
+                    // Take the result, destruct the statement, and pass on the result
+                    $stmt->bind_result($userid, $username, $usermail, $userpasshash, $userstatus, $userauthorid);
+                    while ($stmt->fetch()) {
+                        $res[] = array($userid, $username, $usermail, $userpasshash, $userstatus, $userauthorid);
+                    }
+                    $stmt->close();
                     return $res;
                 }
                 
                 public function GetUserByID($id)
                 {
                     $tableprefix = "nuntii_";
-                    $res = $this->RunQuery("SELECT * FROM " . $tableprefix . "users WHERE id=?", "i", [$id]);
-                    return $res;
-                }
-
-
-                public function RunQuery($query, $types, $params)
-                {
-                    $array = array_merge([$types], $params);
                     // TODO: Get DB information from config
-                    $host = "127.0.0.1";
-                    $user = "root";
-                    $password = "";
-                    $database = "nuntii2";
+                    include("data.php");
                     // Establish connection
                     $mysqli = new mysqli($host, $user, $password, $database);
-                    // Prepare query
-                    $stmt = $mysqli->prepare($query);
-                    // Bind parameters
-                    $command = "\$stmt->bind_param(";
-                    $command .= "\$array[0]";
-                    for ($i = 1; $i < count($array); $i++)
-                    {
-                        $command .= ", \$array[" . $i . "]";
+                    if ($mysqli->connect_errno) {
+                        echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
                     }
-                    $command .= ");";
-                    eval($command);
-                    /*if(!$stmt->bind_param($array))
+                    // Prepare query
+                    if (!($stmt = $mysqli->prepare("SELECT * FROM " . $tableprefix . "users WHERE id=?")))
                     {
-                        return null;
-                    }*/
-                    // Otherwise, execute the statement
-                    $stmt->execute();
+                        echo "Error Preparing statement.";
+                    }
+                    // Bind parameters
+                    if (!($stmt->bind_param("i", $id)))
+                    {
+                        echo "Error binding paramets.";
+                    }
+                    // Execute the statement
+                    if (!$stmt->execute()) {
+                        echo "Execute failed.";
+                    }
                     // Take the result, destruct the statement, and pass on the result
-                    $res = $stmt->get_result();
+                    $stmt->bind_result($userid, $username, $usermail, $userpasshash, $userstatus, $userauthorid);
+                    while ($stmt->fetch()) {
+                        $res[] = array($userid, $username, $usermail, $userpasshash, $userstatus, $userauthorid);
+                    }
                     $stmt->close();
                     return $res;
                 }
@@ -83,14 +128,14 @@
                     $hashedPW = $passHash->hash($password);
                     $tableprefix = "nuntii_";
                     // TODO: Get DB information from config
-                    $dbhost = "127.0.0.1";
-                    $dbuser = "root";
+                    $host = "127.0.0.1";
+                    $user = "root";
                     $dbpassword = "";
-                    $dbdatabase = "nuntii2";
+                    $database = "nuntii2";
                     
                     //$this->RunQuery("INSERT INTO " . $tableprefix . "users VALUES(NULL, 0, ?, ?, ?, NULL, NULL, 0, NULL)", "sss", array($name, $mail, $hashedPW));
                     // Establish connection
-                    if (!$mysqli = new mysqli($dbhost, $dbuser, $dbpassword, $dbdatabase))
+                    if (!$mysqli = new mysqli($host, $user, $dbpassword, $database))
                     {
                         return $mysqli->error;
                     }

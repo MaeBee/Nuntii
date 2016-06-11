@@ -1,7 +1,12 @@
 <?php
 	class User
 	{
-		private $data;
+		private $id;
+                private $name;
+                private $mail;
+                private $passhash;
+                private $status;
+                private $authorid;
 		
 		public function __construct()
 		{		
@@ -28,7 +33,12 @@
                     {
                         $res = $mysql->GetUserByName($id);
                     }
-                    $this->data = $res->fetch_assoc();
+                    $this->id = $res[0];
+                    $this->name = $res[1];
+                    $this->mail = $res[2];
+                    $this->passhash = $res[3];
+                    $this->status = $res[4];
+                    $this->authorid = $res[5];
                 }
 		
 		public function GetID()

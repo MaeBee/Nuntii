@@ -8,7 +8,7 @@
                     $mysql = new MySQL();
                     $res = $mysql->GetPostsByType("article");
                     
-                    while ($row = $res->fetch_assoc())
+                    foreach ($res as $row)
                     {
                         $this->Add(new Post($row));
                     }

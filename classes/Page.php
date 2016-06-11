@@ -27,7 +27,15 @@
 			
 			// With the mode set, we can proceed to evaluate and set up the page's main content.
 			switch ($this->mode) {
-                                case ("list" || "login" || "logout"):
+				case "user":
+					$maincontent = new UserPage($this->id);
+                                        $this->maincontent = $maincontent;
+					break;
+                                case "register":
+                                        $maincontent = new HTMLPage("./includes/register.php", $this->id);
+                                        $this->maincontent = $maincontent;
+                                        break;
+                                default:
                                         $maincontent = null;
                                         if (!isset($this->filter))
                                         {
@@ -37,15 +45,7 @@
                                         }
 					$this->maincontent = $maincontent;
 					break;
-				case "user":
-					$maincontent = new UserPage($this->id);
-                                        $this->maincontent = $maincontent;
-					break;
-                                case "register":
-                                        $maincontent = new HTMLPage("./includes/register.php", $this->id);
-                                        $this->maincontent = $maincontent;
-                                        break;
-			}			
+			}
 		}
 		
 		private function __construct1($a1)
