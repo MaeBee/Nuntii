@@ -51,9 +51,8 @@
                 
                 public function CheckUserPass($name, $password) {
                     $res = $this->GetUserByName($name);
-                    $user = $res->fetch_assoc();
                     $hashing = new PassHash();
-                    return $hashing->check_password($user["passhash"], $password);
+                    return $hashing->check_password($res[0][3], $password);
                 }
                 
                 public function GetUserByName($name)
@@ -82,7 +81,7 @@
                     }
                     // Take the result, destruct the statement, and pass on the result
                     $stmt->bind_result($userid, $username, $usermail, $userpasshash, $userstatus, $userauthorid);
-                    while ($stmt->fetch()) {
+                    if ($stmt->fetch()) {
                         $res[] = array($userid, $username, $usermail, $userpasshash, $userstatus, $userauthorid);
                     }
                     $stmt->close();
@@ -115,7 +114,7 @@
                     }
                     // Take the result, destruct the statement, and pass on the result
                     $stmt->bind_result($userid, $username, $usermail, $userpasshash, $userstatus, $userauthorid);
-                    while ($stmt->fetch()) {
+                    if ($stmt->fetch()) {
                         $res[] = array($userid, $username, $usermail, $userpasshash, $userstatus, $userauthorid);
                     }
                     $stmt->close();

@@ -200,31 +200,50 @@ nav {
     position: relative;
     width: 100%;
 }
-nav > a {
+nav > ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+nav > ul > li {
+    width: auto;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+nav > ul > li > a {
     color: #FFF;
     text-decoration: none;
-}
-nav > a > span {
+    display: block;
     color: #FFF;
     padding: 10px;
     padding-bottom: 12px;
     position: relative;
-    top: 10px;
     -webkit-transition: background-color 0.3s;
 }
-nav > a.menuitemright {
+nav > ul > li > a.menuitem {
+    float: left;
+}
+nav > ul > li > a.menuitemright {
     float: right;
 }
-nav > a.loginform  > span {
+nav > ul > li > div.loginform {
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+    color: #FFF;
+    padding-bottom: 12px;
+    position: relative;
     padding: 0px;
     top: 8px;
+    float: right;
 }
-nav > a:hover > span {
+nav > ul > li > a:hover {
     background-color: #666;
     -webkit-transition: background-color 0.3s;
-    padding-bottom: 14px;
 }
-.menuactive > span {
+.menuactive {
     background-color: #F00;
 }
 #maincontent {
